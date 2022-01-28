@@ -130,7 +130,7 @@
     <body>
         <div class="page">
             <div class="char-count" id="char-count">
-                1611 char. equivalents
+                1761 char. equivalents
                 <br/>
                 23 lines
             </div>
@@ -165,7 +165,7 @@ Artyom quickly started surfing through the few stations he reached, and found no
                 var text = e.target.textContent;
                 var numNewlines = (text.match(/[\n]/g)||[]).length;
                 var withoutNewlines = (text.match(/[^\n]/g)||[]).length;
-                var cc = withoutNewlines + 75 * numNewlines;
+                var cc = withoutNewlines + 100 * numNewlines;
 
                 var numLines = Math.floor(e.target.offsetHeight / 15);
                 console.log(numLines);
