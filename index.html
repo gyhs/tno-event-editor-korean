@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+        <style>
+            @font-face {
+                font-family: 'AFL-Font-pespaye-nonmetric';
+                src:  url('AFL-Font-pespaye-nonmetric.ttf.woff') format('woff'),
+                url('AFL-Font-pespaye-nonmetric.ttf.svg#AFL-Font-pespaye-nonmetric') format('svg'),
+                url('AFL-Font-pespaye-nonmetric.ttf.eot'),
+                url('AFL-Font-pespaye-nonmetric.eot?#iefix') format('embedded-opentype'); 
+                font-weight: normal;
+                font-style: normal;
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .page {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                background-color: #061017;
+            }
+
+            .event-outer {
+                width: 563;
+                background-image: url(event_top.png), url(event_bottom.png);
+                background-position: top, bottom;
+                background-repeat: no-repeat;
+                position: relative;
+            }
+
+            .event-middle-background {
+                position: absolute;
+                top: 193px;
+                bottom: 244px;
+                left: 0;
+                width: 100%;
+                background-image: url(event_middle.png);
+                background-repeat: repeat-y; 
+            }
+
+            .event-text {
+                position: relative;
+                margin-top: 194px;
+                margin-left: 63px;
+                width: 456px;
+                font-family: 'AFL-Font-pespaye-nonmetric';  
+                color: black;
+                font-weight: 600;
+                font-size: 13.2px;
+            }
+
+            .event-title {
+                position: absolute;
+                top: 131px;
+                left: 60px;
+                width: 456px;
+                bottom: 0px;
+                text-align: center;
+            }
+
+            .event-title textarea {
+                font-family: 'AFL-Font-pespaye-nonmetric';  
+                color: black;
+                font-weight: 600;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            .event-text-inner, .event-button {
+                font-family: 'AFL-Font-pespaye-nonmetric';  
+                color: black;
+                font-weight: 600;
+                font-size: 13.2px;
+                white-space: pre-line;
+                border: none;
+                outline: none;
+            }
+
+            .event-button {
+                width: 352px;
+                height: 52px;
+                background-image: url(event_button.png);
+                margin-left: 135px;
+                margin-bottom: 165px;
+                margin-top: 66px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            textarea {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+                outline: none;
+                resize: none;
+                overflow-y: hidden;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="event-outer">
+                <div class="event-middle-background"></div>
+                <div class="event-title">
+                    <textarea>Another Day in Siberia</textarea>
+                </div>
+                <div class="event-text">
+                    <div class="event-text-inner"  contenteditable="true">It was a cold, cold day in Siberia, as it always was. Snow covered the ground, hiding dirt that had never seen the sun deep below, and never would. As Artyom marched through it in boots and furs, a bundle of birds in one hand and his rifle in the other, he looked at the clouds above. They looked darker than normal, a sure sign of a storm.
+
+Shrugging off the snow from his furs and leathers, he approached his ramshackle hut and slowly opened the door, carefully placing his items down on a table nearby.
+
+After a quiet moment of contemplation as he remarked over his quiet abode and lit his lamp, he scratched his dog, Sasha, behind the ear and turned on the radio as he did everyday, and frowned as he got nothing besides static.
+
+Artyom quickly started surfing through the few stations he reached, and found nothing but static, static, and more static. After some time, he shrugged, he had expected the old tilting radio tower near the equally dilapidated village to collapse for days now, nothing could be done. The outside world, and all of its wonders, were nothing but a distant thought for Artyom, and after a sigh, he turned off the radio for the last time.</div>
+                    <div class="event-button" contenteditable="true">Life goes on...</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
