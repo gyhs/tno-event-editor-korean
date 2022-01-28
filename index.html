@@ -24,6 +24,8 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                flex-direction: row;
+                gap: 40px;
                 width: 100%;
                 height: 100%;
                 background-color: #061017;
@@ -75,6 +77,11 @@
                 text-align: center;
             }
 
+            .event-text-inner {
+                display: inline-block;
+                width: 100%;
+            }
+
             .event-text-inner, .event-button {
                 font-family: 'AFL-Font-pespaye-nonmetric';  
                 color: black;
@@ -109,10 +116,24 @@
                 overflow-y: hidden;
             }
 
+            .char-count {
+                color: #B2C9C2;
+                font-family: 'Aldrich', sans-serif;
+                font-size: 16px;
+                text-align: right;
+                line-height: 25px;
+                width: 200px;
+            }
+
         </style>
     </head>
     <body>
         <div class="page">
+            <div class="char-count" id="char-count">
+                1611 char. equivalents
+                <br/>
+                23 lines
+            </div>
             <div class="event-outer">
                 <div class="event-middle-background"></div>
                 <div class="event-title">
@@ -130,5 +151,27 @@ Artyom quickly started surfing through the few stations he reached, and found no
                 </div>
             </div>
         </div>
+        <script>
+            // https://stackoverflow.com/questions/58980235/stop-pasting-html-style-in-a-contenteditable-div-only-paste-the-plain-text
+            var ce = document.querySelector('[contenteditable]');
+            ce.addEventListener('paste', function (e) {
+                e.preventDefault();
+                var text = e.clipboardData.getData('text/plain');
+                text = text.replaceAll("\\n\\n", "\n\n");
+                document.execCommand('insertHTML', false, text);
+            });
+            var charCount = document.querySelector('#char-count');
+            ce.addEventListener("input", function(e) {
+                var text = e.target.textContent;
+                var numNewlines = (text.match(/[\n]/g)||[]).length;
+                var withoutNewlines = (text.match(/[^\n]/g)||[]).length;
+                var cc = withoutNewlines + 75 * numNewlines;
+
+                var numLines = Math.floor(e.target.offsetHeight / 15);
+                console.log(numLines);
+
+                charCount.innerHTML = String(cc) + " char. equivalents<br/>" + String(numLines) + " lines";
+            }, false);
+        </script>
     </body>
 </html>
